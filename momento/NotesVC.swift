@@ -11,7 +11,15 @@ import AWSDynamoDB
 import AWSCore
 import Lottie
 import CoreLocation
+
+protocol ClassBVCDelegate: class {
+    func sendData(_ myNewString: String?)
+}
+
 class NotesVC: UIViewController,UITextViewDelegate,CLLocationManagerDelegate{
+    weak var delegate: ClassBVCDelegate?
+    
+    @IBOutlet weak var myLayoutConstrain: NSLayoutConstraint!
     
     @IBOutlet weak var myBlurView: UIView!
     @IBOutlet weak var myTextView: UITextView!
@@ -24,12 +32,14 @@ class NotesVC: UIViewController,UITextViewDelegate,CLLocationManagerDelegate{
     var myString:String?
     var hideButton:Bool?
     var myData:Data?
+    var myCrop:Bool?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        myLayoutConstrain.constant = 350
         
-        
-        
+    
         if let newData = myData{
             
             //let myImahe = imageRotatedByDegrees(oldImage:   UIImage(data:newData)!, deg: 90)
@@ -268,34 +278,7 @@ class NotesVC: UIViewController,UITextViewDelegate,CLLocationManagerDelegate{
     
     
     
-    func createEntry() {
-        let dynamoDbObjectMapper = AWSDynamoDBObjectMapper.default()
-        
-        // Create data object using data models you downloaded from Mobile Hub
-        let newsItem: AWSDataModel = AWSDataModel()
-        newsItem.UniqueID = "001"
-  
-        newsItem.Tittle = "New Tittle"
-        
-        
-        //        newsItem.userId = ""
-        //
-        //        newsItem.articleId = "YourArticleId"
-        //        newsItem.title = "YourTitlestring"
-        //        newsItem.author = "YourAuthor"
-        //        newsItem.creationDate = NSDate().timeIntervalSince1970 as NSNumber
-        
-        //Save a new item
-        dynamoDbObjectMapper.save(newsItem, completionHandler: {
-            (error: Error?) -> Void in
-            
-            if let error = error {
-                print("Amazon DynamoDB Save Error: \(error)")
-                return
-            }
-            print("An item was saved.")
-        })
-    }
+   
     
     
     
@@ -330,8 +313,9 @@ class NotesVC: UIViewController,UITextViewDelegate,CLLocationManagerDelegate{
         {
             let vc = segue.destination as? ImageViewVC
             vc?.myString_Notes = myTextView.text
-           vc?.myString_Location = label_myCity.text
+            vc?.myString_Location = label_myCity.text
             vc?.myData = myData
+            vc?.myCrop = myCrop
         }
     }
     
@@ -339,20 +323,25 @@ class NotesVC: UIViewController,UITextViewDelegate,CLLocationManagerDelegate{
         
         
         
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: "IDENavController") as! NewImageVIew
-        
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        let controller = storyboard.instantiateViewController(withIdentifier: "IDENavController") as! NewImageVIew
+//
         if(myTextView.text != "Enter you're note here.."){
-            controller.myNotesString = myTextView.text
+           
+            delegate?.sendData(myTextView.text)
         }
-        controller.myData = myData
-        controller.modalTransitionStyle = .crossDissolve
-        present(controller, animated: true, completion: nil)
+//        controller.myData = myData
+//        controller.modalTransitionStyle = .crossDissolve
+//        present(controller, animated: true, completion: nil)
         
-        //        dismiss(animated: true
-        //            , completion: nil)
+                dismiss(animated: true
+                    , completion: nil)
         
         
+        
+       
+        
+
         
         
         

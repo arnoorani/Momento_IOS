@@ -13,10 +13,14 @@ class AWSDataModel: AWSDynamoDBObjectModel, AWSDynamoDBModeling  {
     
     
    @objc var UniqueID: String?
-
    @objc var Tittle: String?
-    @objc var Note: String?
-     @objc var Location: String?
+   @objc var Note: String?
+   @objc var Location: String?
+    @objc var UploaderID: String?
+    
+  
+
+   var CropState: Bool?
 
 
     

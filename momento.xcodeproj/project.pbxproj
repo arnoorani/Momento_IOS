@@ -7,13 +7,41 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0CD1FE663C6A40BAFBD0B0F7 /* Pods_momentoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F97CC497C5A37E41AA7C18B /* Pods_momentoUITests.framework */; };
+		730424AD209F92D200B1A0F8 /* share_for_graminsta_app.json in Resources */ = {isa = PBXBuildFile; fileRef = 730424AC209F92D200B1A0F8 /* share_for_graminsta_app.json */; };
+		730424AF209FCA8E00B1A0F8 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730424AE209FCA8E00B1A0F8 /* LoginVC.swift */; };
+		730424B1209FDFA000B1A0F8 /* NewLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730424B0209FDFA000B1A0F8 /* NewLoginVC.swift */; };
+		730ADA8220A15C3E00E2D53E /* MyPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730ADA8120A15C3E00E2D53E /* MyPageVC.swift */; };
 		737D105C209EBA8700C65FAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737D105B209EBA8700C65FAF /* AppDelegate.swift */; };
-		737D105E209EBA8700C65FAF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737D105D209EBA8700C65FAF /* ViewController.swift */; };
 		737D1061209EBA8700C65FAF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 737D105F209EBA8700C65FAF /* Main.storyboard */; };
 		737D1063209EBA8900C65FAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 737D1062209EBA8900C65FAF /* Assets.xcassets */; };
 		737D1066209EBA8900C65FAF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 737D1064209EBA8900C65FAF /* LaunchScreen.storyboard */; };
 		737D1071209EBA8900C65FAF /* momentoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737D1070209EBA8900C65FAF /* momentoTests.swift */; };
 		737D107C209EBA8900C65FAF /* momentoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737D107B209EBA8900C65FAF /* momentoUITests.swift */; };
+		737D108A209EBAF100C65FAF /* CameraVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737D1089209EBAF100C65FAF /* CameraVC.swift */; };
+		737D1090209EC02B00C65FAF /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737D108F209EC02B00C65FAF /* CameraController.swift */; };
+		737D1092209EC0EB00C65FAF /* ImageViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737D1091209EC0EB00C65FAF /* ImageViewVC.swift */; };
+		737D1094209EC12900C65FAF /* AWSDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737D1093209EC12900C65FAF /* AWSDataModel.swift */; };
+		737D1096209EC14200C65FAF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737D1095209EC14200C65FAF /* Constants.swift */; };
+		737D1098209EC17900C65FAF /* NewImageVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737D1097209EC17900C65FAF /* NewImageVIew.swift */; };
+		737D109A209EC1A400C65FAF /* NotesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737D1099209EC1A400C65FAF /* NotesVC.swift */; };
+		737D10A7209EC36900C65FAF /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 737D10A3209EC33900C65FAF /* Roboto-Black.ttf */; };
+		737D10A8209EC36900C65FAF /* Roboto-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 737D10A4209EC33900C65FAF /* Roboto-BlackItalic.ttf */; };
+		737D10A9209EC36900C65FAF /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 737D10A0209EC33800C65FAF /* Roboto-Bold.ttf */; };
+		737D10AA209EC36900C65FAF /* Roboto-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 737D109F209EC33700C65FAF /* Roboto-BoldItalic.ttf */; };
+		737D10AB209EC36900C65FAF /* Roboto-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 737D109E209EC33700C65FAF /* Roboto-Italic.ttf */; };
+		737D10AC209EC36900C65FAF /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 737D109C209EC33600C65FAF /* Roboto-Light.ttf */; };
+		737D10AD209EC36900C65FAF /* Roboto-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 737D10A2209EC33800C65FAF /* Roboto-LightItalic.ttf */; };
+		737D10AE209EC36900C65FAF /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 737D10A5209EC33900C65FAF /* Roboto-Medium.ttf */; };
+		737D10AF209EC36900C65FAF /* Roboto-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 737D10A6209EC33A00C65FAF /* Roboto-MediumItalic.ttf */; };
+		737D10B0209EC36900C65FAF /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 737D109D209EC33700C65FAF /* Roboto-Regular.ttf */; };
+		737D10B1209EC36900C65FAF /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 737D10A1209EC33800C65FAF /* Roboto-Thin.ttf */; };
+		737D10B4209EC3D900C65FAF /* image_icon_tadah!.json in Resources */ = {isa = PBXBuildFile; fileRef = 737D10B3209EC3D900C65FAF /* image_icon_tadah!.json */; };
+		737D10B6209F235500C65FAF /* reload.json in Resources */ = {isa = PBXBuildFile; fileRef = 737D10B5209F235500C65FAF /* reload.json */; };
+		73D75CA820B2409F000AB99E /* TableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D75CA720B2409F000AB99E /* TableVC.swift */; };
+		73D75CAA20B240CA000AB99E /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D75CA920B240CA000AB99E /* TableViewCell.swift */; };
+		B9CBEE9DD38A5A64E5F83ED9 /* Pods_momento.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E8A5E4C6E46A793EC49D2F8 /* Pods_momento.framework */; };
+		FEFC9592E1381145D7E71ADE /* Pods_momentoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CE56037E40637CAE78B6F98 /* Pods_momentoTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,9 +62,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0EFA9D279806492AF16DD647 /* Pods-momentoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-momentoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-momentoTests/Pods-momentoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		3F41DDA17A3EA32C6CEFA3FF /* Pods-momentoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-momentoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-momentoTests/Pods-momentoTests.release.xcconfig"; sourceTree = "<group>"; };
+		730424AC209F92D200B1A0F8 /* share_for_graminsta_app.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = share_for_graminsta_app.json; sourceTree = "<group>"; };
+		730424AE209FCA8E00B1A0F8 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		730424B0209FDFA000B1A0F8 /* NewLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewLoginVC.swift; sourceTree = "<group>"; };
+		730ADA8120A15C3E00E2D53E /* MyPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageVC.swift; sourceTree = "<group>"; };
 		737D1058209EBA8700C65FAF /* momento.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = momento.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		737D105B209EBA8700C65FAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		737D105D209EBA8700C65FAF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		737D1060209EBA8700C65FAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		737D1062209EBA8900C65FAF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		737D1065209EBA8900C65FAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +80,35 @@
 		737D1077209EBA8900C65FAF /* momentoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = momentoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		737D107B209EBA8900C65FAF /* momentoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = momentoUITests.swift; sourceTree = "<group>"; };
 		737D107D209EBA8900C65FAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		737D1089209EBAF100C65FAF /* CameraVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraVC.swift; sourceTree = "<group>"; };
+		737D108F209EC02B00C65FAF /* CameraController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
+		737D1091209EC0EB00C65FAF /* ImageViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewVC.swift; sourceTree = "<group>"; };
+		737D1093209EC12900C65FAF /* AWSDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AWSDataModel.swift; sourceTree = "<group>"; };
+		737D1095209EC14200C65FAF /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		737D1097209EC17900C65FAF /* NewImageVIew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewImageVIew.swift; sourceTree = "<group>"; };
+		737D1099209EC1A400C65FAF /* NotesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesVC.swift; sourceTree = "<group>"; };
+		737D109C209EC33600C65FAF /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
+		737D109D209EC33700C65FAF /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		737D109E209EC33700C65FAF /* Roboto-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Italic.ttf"; sourceTree = "<group>"; };
+		737D109F209EC33700C65FAF /* Roboto-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-BoldItalic.ttf"; sourceTree = "<group>"; };
+		737D10A0209EC33800C65FAF /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		737D10A1209EC33800C65FAF /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
+		737D10A2209EC33800C65FAF /* Roboto-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-LightItalic.ttf"; sourceTree = "<group>"; };
+		737D10A3209EC33900C65FAF /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Black.ttf"; sourceTree = "<group>"; };
+		737D10A4209EC33900C65FAF /* Roboto-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-BlackItalic.ttf"; sourceTree = "<group>"; };
+		737D10A5209EC33900C65FAF /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
+		737D10A6209EC33A00C65FAF /* Roboto-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-MediumItalic.ttf"; sourceTree = "<group>"; };
+		737D10B3209EC3D900C65FAF /* image_icon_tadah!.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "image_icon_tadah!.json"; sourceTree = "<group>"; };
+		737D10B5209F235500C65FAF /* reload.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = reload.json; sourceTree = "<group>"; };
+		73D75CA720B2409F000AB99E /* TableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableVC.swift; sourceTree = "<group>"; };
+		73D75CA920B240CA000AB99E /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		7DF596B7FDF6FDEF6E56EF60 /* Pods-momento.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-momento.release.xcconfig"; path = "Pods/Target Support Files/Pods-momento/Pods-momento.release.xcconfig"; sourceTree = "<group>"; };
+		8C861E3C489CDD2778C302BC /* Pods-momentoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-momentoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-momentoUITests/Pods-momentoUITests.release.xcconfig"; sourceTree = "<group>"; };
+		8F97CC497C5A37E41AA7C18B /* Pods_momentoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_momentoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9CE56037E40637CAE78B6F98 /* Pods_momentoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_momentoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9E8A5E4C6E46A793EC49D2F8 /* Pods_momento.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_momento.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C1B0E9DE0B74D66042DB8EDC /* Pods-momentoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-momentoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-momentoUITests/Pods-momentoUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		EE9937F5C21F459079839AA6 /* Pods-momento.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-momento.debug.xcconfig"; path = "Pods/Target Support Files/Pods-momento/Pods-momento.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +116,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9CBEE9DD38A5A64E5F83ED9 /* Pods_momento.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +124,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEFC9592E1381145D7E71ADE /* Pods_momentoTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +132,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0CD1FE663C6A40BAFBD0B0F7 /* Pods_momentoUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,10 +142,13 @@
 		737D104F209EBA8700C65FAF = {
 			isa = PBXGroup;
 			children = (
+				730424B0209FDFA000B1A0F8 /* NewLoginVC.swift */,
 				737D105A209EBA8700C65FAF /* momento */,
 				737D106F209EBA8900C65FAF /* momentoTests */,
 				737D107A209EBA8900C65FAF /* momentoUITests */,
 				737D1059209EBA8700C65FAF /* Products */,
+				FC8723685B65B29DDC1FB6E6 /* Pods */,
+				D53F8186BEF49557E4865020 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,12 +165,24 @@
 		737D105A209EBA8700C65FAF /* momento */ = {
 			isa = PBXGroup;
 			children = (
+				730424AC209F92D200B1A0F8 /* share_for_graminsta_app.json */,
+				737D10B5209F235500C65FAF /* reload.json */,
+				737D10B3209EC3D900C65FAF /* image_icon_tadah!.json */,
+				737D10B2209EC38800C65FAF /* Fonts */,
+				737D1099209EC1A400C65FAF /* NotesVC.swift */,
+				737D1097209EC17900C65FAF /* NewImageVIew.swift */,
+				737D109B209EC1BB00C65FAF /* HelperMethods */,
 				737D105B209EBA8700C65FAF /* AppDelegate.swift */,
-				737D105D209EBA8700C65FAF /* ViewController.swift */,
 				737D105F209EBA8700C65FAF /* Main.storyboard */,
 				737D1062209EBA8900C65FAF /* Assets.xcassets */,
 				737D1064209EBA8900C65FAF /* LaunchScreen.storyboard */,
 				737D1067209EBA8900C65FAF /* Info.plist */,
+				737D1089209EBAF100C65FAF /* CameraVC.swift */,
+				737D1091209EC0EB00C65FAF /* ImageViewVC.swift */,
+				730424AE209FCA8E00B1A0F8 /* LoginVC.swift */,
+				730ADA8120A15C3E00E2D53E /* MyPageVC.swift */,
+				73D75CA720B2409F000AB99E /* TableVC.swift */,
+				73D75CA920B240CA000AB99E /* TableViewCell.swift */,
 			);
 			path = momento;
 			sourceTree = "<group>";
@@ -125,6 +205,57 @@
 			path = momentoUITests;
 			sourceTree = "<group>";
 		};
+		737D109B209EC1BB00C65FAF /* HelperMethods */ = {
+			isa = PBXGroup;
+			children = (
+				737D1095209EC14200C65FAF /* Constants.swift */,
+				737D1093209EC12900C65FAF /* AWSDataModel.swift */,
+				737D108F209EC02B00C65FAF /* CameraController.swift */,
+			);
+			path = HelperMethods;
+			sourceTree = "<group>";
+		};
+		737D10B2209EC38800C65FAF /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				737D10A3209EC33900C65FAF /* Roboto-Black.ttf */,
+				737D10A4209EC33900C65FAF /* Roboto-BlackItalic.ttf */,
+				737D10A0209EC33800C65FAF /* Roboto-Bold.ttf */,
+				737D109F209EC33700C65FAF /* Roboto-BoldItalic.ttf */,
+				737D109E209EC33700C65FAF /* Roboto-Italic.ttf */,
+				737D109C209EC33600C65FAF /* Roboto-Light.ttf */,
+				737D10A2209EC33800C65FAF /* Roboto-LightItalic.ttf */,
+				737D10A5209EC33900C65FAF /* Roboto-Medium.ttf */,
+				737D10A6209EC33A00C65FAF /* Roboto-MediumItalic.ttf */,
+				737D109D209EC33700C65FAF /* Roboto-Regular.ttf */,
+				737D10A1209EC33800C65FAF /* Roboto-Thin.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		D53F8186BEF49557E4865020 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9E8A5E4C6E46A793EC49D2F8 /* Pods_momento.framework */,
+				9CE56037E40637CAE78B6F98 /* Pods_momentoTests.framework */,
+				8F97CC497C5A37E41AA7C18B /* Pods_momentoUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FC8723685B65B29DDC1FB6E6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EE9937F5C21F459079839AA6 /* Pods-momento.debug.xcconfig */,
+				7DF596B7FDF6FDEF6E56EF60 /* Pods-momento.release.xcconfig */,
+				0EFA9D279806492AF16DD647 /* Pods-momentoTests.debug.xcconfig */,
+				3F41DDA17A3EA32C6CEFA3FF /* Pods-momentoTests.release.xcconfig */,
+				C1B0E9DE0B74D66042DB8EDC /* Pods-momentoUITests.debug.xcconfig */,
+				8C861E3C489CDD2778C302BC /* Pods-momentoUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +263,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 737D1080209EBA8900C65FAF /* Build configuration list for PBXNativeTarget "momento" */;
 			buildPhases = (
+				26BCD4CB77369D603F83F4AA /* [CP] Check Pods Manifest.lock */,
 				737D1054209EBA8700C65FAF /* Sources */,
 				737D1055209EBA8700C65FAF /* Frameworks */,
 				737D1056209EBA8700C65FAF /* Resources */,
+				7CD2B50B6BE15FB77AA406F0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -149,6 +282,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 737D1083209EBA8900C65FAF /* Build configuration list for PBXNativeTarget "momentoTests" */;
 			buildPhases = (
+				9AD3F6D190871E634D0A9EBB /* [CP] Check Pods Manifest.lock */,
 				737D1068209EBA8900C65FAF /* Sources */,
 				737D1069209EBA8900C65FAF /* Frameworks */,
 				737D106A209EBA8900C65FAF /* Resources */,
@@ -167,6 +301,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 737D1086209EBA8900C65FAF /* Build configuration list for PBXNativeTarget "momentoUITests" */;
 			buildPhases = (
+				9FA6011D7F81FBC461B6D8E2 /* [CP] Check Pods Manifest.lock */,
 				737D1073209EBA8900C65FAF /* Sources */,
 				737D1074209EBA8900C65FAF /* Frameworks */,
 				737D1075209EBA8900C65FAF /* Resources */,
@@ -229,9 +364,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				737D10A7209EC36900C65FAF /* Roboto-Black.ttf in Resources */,
+				737D10B4209EC3D900C65FAF /* image_icon_tadah!.json in Resources */,
+				737D10A8209EC36900C65FAF /* Roboto-BlackItalic.ttf in Resources */,
+				737D10A9209EC36900C65FAF /* Roboto-Bold.ttf in Resources */,
+				737D10AA209EC36900C65FAF /* Roboto-BoldItalic.ttf in Resources */,
+				737D10AB209EC36900C65FAF /* Roboto-Italic.ttf in Resources */,
+				737D10AC209EC36900C65FAF /* Roboto-Light.ttf in Resources */,
+				737D10AD209EC36900C65FAF /* Roboto-LightItalic.ttf in Resources */,
+				737D10AE209EC36900C65FAF /* Roboto-Medium.ttf in Resources */,
+				737D10AF209EC36900C65FAF /* Roboto-MediumItalic.ttf in Resources */,
+				737D10B6209F235500C65FAF /* reload.json in Resources */,
+				737D10B0209EC36900C65FAF /* Roboto-Regular.ttf in Resources */,
+				737D10B1209EC36900C65FAF /* Roboto-Thin.ttf in Resources */,
 				737D1066209EBA8900C65FAF /* LaunchScreen.storyboard in Resources */,
 				737D1063209EBA8900C65FAF /* Assets.xcassets in Resources */,
 				737D1061209EBA8700C65FAF /* Main.storyboard in Resources */,
+				730424AD209F92D200B1A0F8 /* share_for_graminsta_app.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,13 +400,119 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		26BCD4CB77369D603F83F4AA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-momento-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7CD2B50B6BE15FB77AA406F0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-momento/Pods-momento-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AWSCore/AWSCore.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSDynamoDB/AWSDynamoDB.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSS3/AWSS3.framework",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookShare/FacebookShare.framework",
+				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSDynamoDB.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSS3.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookShare.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-momento/Pods-momento-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9AD3F6D190871E634D0A9EBB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-momentoTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9FA6011D7F81FBC461B6D8E2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-momentoUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		737D1054209EBA8700C65FAF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				737D105E209EBA8700C65FAF /* ViewController.swift in Sources */,
+				73D75CAA20B240CA000AB99E /* TableViewCell.swift in Sources */,
+				737D1090209EC02B00C65FAF /* CameraController.swift in Sources */,
 				737D105C209EBA8700C65FAF /* AppDelegate.swift in Sources */,
+				737D109A209EC1A400C65FAF /* NotesVC.swift in Sources */,
+				730424B1209FDFA000B1A0F8 /* NewLoginVC.swift in Sources */,
+				730ADA8220A15C3E00E2D53E /* MyPageVC.swift in Sources */,
+				737D108A209EBAF100C65FAF /* CameraVC.swift in Sources */,
+				737D1094209EC12900C65FAF /* AWSDataModel.swift in Sources */,
+				730424AF209FCA8E00B1A0F8 /* LoginVC.swift in Sources */,
+				737D1098209EC17900C65FAF /* NewImageVIew.swift in Sources */,
+				73D75CA820B2409F000AB99E /* TableVC.swift in Sources */,
+				737D1092209EC0EB00C65FAF /* ImageViewVC.swift in Sources */,
+				737D1096209EC14200C65FAF /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,6 +683,7 @@
 		};
 		737D1081209EBA8900C65FAF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EE9937F5C21F459079839AA6 /* Pods-momento.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -446,6 +702,7 @@
 		};
 		737D1082209EBA8900C65FAF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7DF596B7FDF6FDEF6E56EF60 /* Pods-momento.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -464,6 +721,7 @@
 		};
 		737D1084209EBA8900C65FAF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0EFA9D279806492AF16DD647 /* Pods-momentoTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -485,6 +743,7 @@
 		};
 		737D1085209EBA8900C65FAF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3F41DDA17A3EA32C6CEFA3FF /* Pods-momentoTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -506,6 +765,7 @@
 		};
 		737D1087209EBA8900C65FAF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C1B0E9DE0B74D66042DB8EDC /* Pods-momentoUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -526,6 +786,7 @@
 		};
 		737D1088209EBA8900C65FAF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8C861E3C489CDD2778C302BC /* Pods-momentoUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

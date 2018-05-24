@@ -7,17 +7,46 @@
 //
 
 import UIKit
-
-    class NewImageVIew: UIViewController {
+import Lottie
+class NewImageVIew: UIViewController,ClassBVCDelegate {
+    func sendData(_ myNewStrinf: String?) {
+        myNotesString = myNewStrinf
+    }
+    
   public var myNotesString:String?
+        
+    @IBOutlet weak var myCropButton: UIButton!
+    var myCropButtonInt:Int?
+        
         public var myBool:Bool?
         @IBOutlet weak var myImageView: UIImageView!
         public var myData:Data?
+        public var CropState:Bool?
+        private var myAnimatoinView: LOTAnimationView?
+        private var myAnimatoinView_send: LOTAnimationView?
 
+        @IBOutlet weak var crossView: UIView!
         
-    override func viewDidLoad() {
+        @IBOutlet weak var sendView: UIView!
+        
+        
+        
+        override func viewDidLoad() {
         super.viewDidLoad()
-      
+            
+            
+            
+    
+       createAnimatedView()
+        createAnimatedView_upload()
+//            print(myCropButtonInt)
+            if(myCropButtonInt == 1){
+                myCropButton.isHidden = true
+            }else{
+                 myCropButton.isHidden = false
+            }
+            
+//        
         if let newData = myData{
             
 //            let myImahe = imageRotatedByDegrees(oldImage:   UIImage(data:newData)!, deg: 90)
@@ -65,24 +94,113 @@ import UIKit
         @IBAction func action_Dismiss(_ sender: Any) {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let controller = storyboard.instantiateViewController(withIdentifier: "IDECamController") as! CameraVC
+           // controller.myCameraPosCamVC = myCameraPos
             controller.modalTransitionStyle = .crossDissolve
             present(controller, animated: true, completion: nil)
         }
         override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
-                
+        
+       
+        
         if segue.destination is NotesVC
         {
+            
             let vc = segue.destination as? NotesVC
+            vc?.delegate = self
             vc?.myString = myNotesString
             vc?.hideButton = myBool
             vc?.myData = myData
+            vc?.myCrop = CropState
+           
         }
     }
-    
-        @IBAction func action_Next(_ sender: Any) {
+        
+        @objc func handleTap(_ sender: UITapGestureRecognizer) {
+            dismiss(animated: true
+                , completion: nil)
+//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//            let controller = storyboard.instantiateViewController(withIdentifier: "IDECamController") as! CameraVC
+//            controller.myCameraPosCamVC = myCameraPos
+//            controller.modalTransitionStyle = .crossDissolve
+//            present(controller, animated: true, completion: nil)
+        }
+      @objc func handleNext(_ sender: UITapGestureRecognizer){
             myBool = false
-            performSegue(withIdentifier: "nextSeg", sender: nil)        }
+            performSegue(withIdentifier: "nextSeg", sender: nil)
+        }
+        func createAnimatedView(){
+            
+            if(myAnimatoinView?.isAnimationPlaying == true){
+                
+            }else{
+                myAnimatoinView = LOTAnimationView(name: "reload")
+                myAnimatoinView!.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+                myAnimatoinView!.contentMode = .scaleAspectFill
+                myAnimatoinView!.frame = CGRect(x:0 ,y:0,width:crossView.frame.size.width*3,height:crossView.frame.size.height*3)
+                myAnimatoinView!.center = crossView.center
+               // myAnimatoinView!.play()
+                myAnimatoinView!.play(fromProgress: 0.4,
+                                    toProgress: 1,
+                                    withCompletion: nil)
+               
+                myAnimatoinView!.loopAnimation = true
+              view.addSubview(myAnimatoinView!)
+                
+                let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
+                myAnimatoinView?.addGestureRecognizer(tap)
+                myAnimatoinView?.isUserInteractionEnabled = true
+               
+
+            }
+        }
+        
+        func createAnimatedView_upload(){
+            
+            if(myAnimatoinView_send?.isAnimationPlaying == true){
+                
+            }else{
+                myAnimatoinView_send = LOTAnimationView(name: "share_for_graminsta_app")
+                myAnimatoinView_send!.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+                myAnimatoinView_send!.contentMode = .scaleAspectFill
+                myAnimatoinView_send!.frame = CGRect(x:0 ,y:0,width:sendView.frame.size.width*2,height:sendView.frame.size.height*2)
+                myAnimatoinView_send!.center = sendView.center
+                 myAnimatoinView_send!.play()
+//                myAnimatoinView_send!.play(fromProgress: 0.4,
+//                                      toProgress: 1,
+//                                      withCompletion: nil)
+                
+                myAnimatoinView_send!.loopAnimation = true
+                view.addSubview(myAnimatoinView_send!)
+                
+               let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleNext(_:)))
+                myAnimatoinView_send?.addGestureRecognizer(tap)
+                myAnimatoinView_send?.isUserInteractionEnabled = true
+                
+                
+            }
+        }
+        
+      
+    @IBAction func action_Crop(_ sender: Any) {
+        
+        if(myImageView.contentMode == .scaleAspectFill){
+              myImageView.contentMode = .scaleAspectFit
+            myCropButton.setImage( #imageLiteral(resourceName: "Crop Off Icon"),for:.normal)
+
+              CropState = true
+        }else{
+            CropState = false
+            myImageView.contentMode = .scaleAspectFill
+            myCropButton.setImage( #imageLiteral(resourceName: "Crop On Icon"),for:.normal)
+
+        }
+        
+      
+    }
+    
+   
+    
         
     /*
     // MARK: - Navigation

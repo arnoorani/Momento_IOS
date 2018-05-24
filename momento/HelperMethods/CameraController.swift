@@ -122,6 +122,32 @@ extension CameraController {
         self.previewLayer?.frame = view.frame
     }
     
+    private func cameraWithPosition(position: AVCaptureDevice.Position) -> AVCaptureDevice? {
+        let devices = AVCaptureDevice.devices(for: AVMediaType.video)
+        return devices.filter { $0.position == position }.first
+    }
+    public func rotatePreview() {
+        
+        guard previewLayer != nil else {
+            return
+        }
+        switch UIApplication.shared.statusBarOrientation {
+        case .portrait:
+            self.previewLayer?.connection?.videoOrientation = AVCaptureVideoOrientation.portrait
+            break
+        case .portraitUpsideDown:
+            self.previewLayer?.connection?.videoOrientation = AVCaptureVideoOrientation.portraitUpsideDown
+            break
+        case .landscapeRight:
+            previewLayer?.connection?.videoOrientation = AVCaptureVideoOrientation.landscapeRight
+            break
+        case .landscapeLeft:
+            previewLayer?.connection?.videoOrientation = AVCaptureVideoOrientation.landscapeLeft
+            break
+        default: break
+        }
+    }
+    
     func switchCameras() throws {
         guard let currentCameraPosition = currentCameraPosition, let captureSession = self.captureSession, captureSession.isRunning else { throw CameraControllerError.captureSessionIsMissing }
         
@@ -129,10 +155,10 @@ extension CameraController {
         
         func switchToFrontCamera() throws {
             
-            guard let rearCameraInput = self.rearCameraInput, captureSession.inputs.contains(rearCameraInput),
-                let frontCamera = self.frontCamera else { throw CameraControllerError.invalidOperation }
+            guard let rearCameraInput = self.rearCameraInput, captureSession.inputs.contains(rearCameraInput)
+                else { throw CameraControllerError.invalidOperation }
             
-            self.frontCameraInput = try AVCaptureDeviceInput(device: frontCamera)
+            self.frontCameraInput = try AVCaptureDeviceInput(device: cameraWithPosition(position: AVCaptureDevice.Position.front)!)
             
             captureSession.removeInput(rearCameraInput)
             
@@ -145,6 +171,8 @@ extension CameraController {
             else {
                 throw CameraControllerError.invalidOperation
             }
+            
+            rotatePreview()
         }
         
         func switchToRearCamera() throws {
@@ -175,6 +203,7 @@ extension CameraController {
         
         captureSession.commitConfiguration()
     }
+ 
     
     func captureImage(completion: @escaping (UIImage?, Error?) -> Void) {
         guard let captureSession = captureSession, captureSession.isRunning else { completion(nil, CameraControllerError.captureSessionIsMissing); return }
@@ -185,12 +214,12 @@ extension CameraController {
         self.photoOutput?.capturePhoto(with: settings, delegate: self)
         self.photoCaptureCompletionBlock = completion
     }
-
+    
 }
 
 extension CameraController: AVCapturePhotoCaptureDelegate {
     public func photoOutput(_ captureOutput: AVCapturePhotoOutput, didFinishProcessingPhoto photoSampleBuffer: CMSampleBuffer?, previewPhoto previewPhotoSampleBuffer: CMSampleBuffer?,
-                        resolvedSettings: AVCaptureResolvedPhotoSettings, bracketSettings: AVCaptureBracketedStillImageSettings?, error: Swift.Error?) {
+                            resolvedSettings: AVCaptureResolvedPhotoSettings, bracketSettings: AVCaptureBracketedStillImageSettings?, error: Swift.Error?) {
         if let error = error { self.photoCaptureCompletionBlock?(nil, error) }
             
         else if let buffer = photoSampleBuffer, let data = AVCapturePhotoOutput.jpegPhotoDataRepresentation(forJPEGSampleBuffer: buffer, previewPhotoSampleBuffer: nil),
