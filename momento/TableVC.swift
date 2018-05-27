@@ -101,14 +101,14 @@ print("Running!")
         
         
         
-        return 1
+        return self.myItems!.items.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCustomView") as! TableViewCell
         
 
      
-                if self.myItems?.items[0] != nil{
+                if self.myItems?.items[indexPath.row] != nil{
                     let myModelItems:AWSDataModel = (self.myItems?.items[0] as? AWSDataModel)!
                     print(myModelItems)
                     cell.myLableView.text = myModelItems.Location
