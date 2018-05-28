@@ -19,7 +19,7 @@ class ImageViewVC: UIViewController {
     var myString_name:String?
     var myString_Notes:String?
     var myString_Location:String?
-    var myCrop:Bool?
+    var myCrop:String?
     var myString_ImageID:String?
 
     var completionHandler: AWSS3TransferUtilityUploadCompletionHandlerBlock?
@@ -33,7 +33,7 @@ class ImageViewVC: UIViewController {
     @IBOutlet weak var myViewBlur: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
-//           print(myCrop)
+    
         createAnimatedView_cross()
         performScan()
         
@@ -73,10 +73,7 @@ class ImageViewVC: UIViewController {
         
         // Do any additional setup after loading the view.
     }
-    @IBAction func action_Refresh(_ sender: Any) {
-        
-        performScan()
-    }
+
     
     func performScan(){
         self.createAnimatedView()
@@ -102,7 +99,10 @@ class ImageViewVC: UIViewController {
                     
                     self.myTextView.text = myModel.Note
                     
-                    if(myModel.CropState)!{
+                    
+                   
+                    
+                    if(myModel.CropState == "1"){
                         self.myImageView.contentMode = .scaleAspectFit
                     }else{
                         self.myImageView.contentMode = .scaleAspectFill
@@ -122,7 +122,7 @@ class ImageViewVC: UIViewController {
             
         })
         
-        print("Running!")
+       
         
     }
     override func didReceiveMemoryWarning() {
@@ -156,7 +156,7 @@ class ImageViewVC: UIViewController {
         newsItem.Location = self.myString_Location
         newsItem.CropState = myCrop
         newsItem.UploaderID = UserDefaults.standard.string(forKey: MyUniqyeID) ?? "001"
-        
+  
         
         //        newsItem.userId = ""
         //
@@ -175,7 +175,7 @@ class ImageViewVC: UIViewController {
             }
             
             
-            print("An item was saved.")
+          
         })
     }
     
@@ -201,7 +201,7 @@ class ImageViewVC: UIViewController {
 //        dismiss(animated: true
   //          , completion: nil)
                     let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                    let controller = storyboard.instantiateViewController(withIdentifier: "IDECamController") as! CameraVC
+                    let controller = storyboard.instantiateViewController(withIdentifier: "IDECamController2") as! MyPageVC
 
                     controller.modalTransitionStyle = .crossDissolve
                     present(controller, animated: true, completion: nil)
@@ -261,7 +261,7 @@ class ImageViewVC: UIViewController {
             return nil
             
         })
-        
+        likeButton.isHidden = true
     }
     
     func uploadImageData(with data: Data) {
@@ -288,7 +288,7 @@ class ImageViewVC: UIViewController {
                 
                 if let _ = task.result {
                     
-                    print("Upload Starting!")
+                   
                     
                     // Do something with uploadTask.
                 }

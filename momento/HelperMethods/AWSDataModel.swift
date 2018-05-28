@@ -20,7 +20,7 @@ class AWSDataModel: AWSDynamoDBObjectModel, AWSDynamoDBModeling  {
     
   
 
-   var CropState: Bool?
+   @objc var CropState: String?
 
 
     

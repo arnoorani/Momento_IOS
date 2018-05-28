@@ -21,7 +21,7 @@ class NewImageVIew: UIViewController,ClassBVCDelegate {
         public var myBool:Bool?
         @IBOutlet weak var myImageView: UIImageView!
         public var myData:Data?
-        public var CropState:Bool?
+        public var CropState:String?
         private var myAnimatoinView: LOTAnimationView?
         private var myAnimatoinView_send: LOTAnimationView?
 
@@ -35,16 +35,16 @@ class NewImageVIew: UIViewController,ClassBVCDelegate {
         super.viewDidLoad()
             
             
-            
+             CropState = "0"
     
        createAnimatedView()
         createAnimatedView_upload()
-//            print(myCropButtonInt)
-            if(myCropButtonInt == 1){
-                myCropButton.isHidden = true
-            }else{
-                 myCropButton.isHidden = false
-            }
+            print(myCropButtonInt)
+//            if(myCropButtonInt == 1){
+//                myCropButton.isHidden = true
+//            }else{
+//                 myCropButton.isHidden = false
+//            }
             
 //        
         if let newData = myData{
@@ -112,6 +112,7 @@ class NewImageVIew: UIViewController,ClassBVCDelegate {
             vc?.hideButton = myBool
             vc?.myData = myData
             vc?.myCrop = CropState
+    
            
         }
     }
@@ -137,7 +138,7 @@ class NewImageVIew: UIViewController,ClassBVCDelegate {
                 myAnimatoinView = LOTAnimationView(name: "reload")
                 myAnimatoinView!.autoresizingMask = [.flexibleHeight, .flexibleWidth]
                 myAnimatoinView!.contentMode = .scaleAspectFill
-                myAnimatoinView!.frame = CGRect(x:0 ,y:0,width:crossView.frame.size.width*3,height:crossView.frame.size.height*3)
+                myAnimatoinView!.frame = CGRect(x:crossView.frame.origin.x ,y:crossView.frame.origin.y,width:crossView.frame.size.width*3,height:crossView.frame.size.height*3)
                 myAnimatoinView!.center = crossView.center
                // myAnimatoinView!.play()
                 myAnimatoinView!.play(fromProgress: 0.4,
@@ -188,9 +189,11 @@ class NewImageVIew: UIViewController,ClassBVCDelegate {
               myImageView.contentMode = .scaleAspectFit
             myCropButton.setImage( #imageLiteral(resourceName: "Crop Off Icon"),for:.normal)
 
-              CropState = true
+              CropState = "1"
+              print(CropState)
         }else{
-            CropState = false
+            CropState = "0"
+              print(CropState)
             myImageView.contentMode = .scaleAspectFill
             myCropButton.setImage( #imageLiteral(resourceName: "Crop On Icon"),for:.normal)
 

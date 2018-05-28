@@ -32,12 +32,12 @@ class NotesVC: UIViewController,UITextViewDelegate,CLLocationManagerDelegate{
     var myString:String?
     var hideButton:Bool?
     var myData:Data?
-    var myCrop:Bool?
+    var myCrop:String?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        myLayoutConstrain.constant = 350
+
         
     
         if let newData = myData{
@@ -316,6 +316,8 @@ class NotesVC: UIViewController,UITextViewDelegate,CLLocationManagerDelegate{
             vc?.myString_Location = label_myCity.text
             vc?.myData = myData
             vc?.myCrop = myCrop
+        
+     
         }
     }
     

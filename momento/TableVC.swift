@@ -99,9 +99,13 @@ print("Running!")
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
+        if self.myItems?.items.count != nil{
+            return self.myItems!.items.count
         
-        
-        return self.myItems!.items.count
+        }else{
+            return 0
+        }
+        return 0
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCustomView") as! TableViewCell
@@ -109,7 +113,7 @@ print("Running!")
 
      
                 if self.myItems?.items[indexPath.row] != nil{
-                    let myModelItems:AWSDataModel = (self.myItems?.items[0] as? AWSDataModel)!
+                    let myModelItems:AWSDataModel = (self.myItems?.items[indexPath.row] as? AWSDataModel)!
                     print(myModelItems)
                     cell.myLableView.text = myModelItems.Location
                     cell.myTextView.text = myModelItems.Note
