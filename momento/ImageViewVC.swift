@@ -145,6 +145,24 @@ class ImageViewVC: UIViewController {
         
         return randomString
     }
+    func getTodayString() -> String{
+        
+        let date = Date()
+        let calender = Calendar.current
+        let components = calender.dateComponents([.year,.month,.day,.hour,.minute,.second], from: date)
+        
+        let year = components.year
+        let month = components.month
+        let day = components.day
+        let hour = components.hour
+        let minute = components.minute
+        let second = components.second
+        
+        let today_string = String(year!) + "-" + String(month!) + "-" + String(day!) + " " + String(hour!)  + ":" + String(minute!) + ":" +  String(second!)
+        
+        return today_string
+        
+    }
     func createEntry() {
         let dynamoDbObjectMapper = AWSDynamoDBObjectMapper.default()
         
@@ -155,6 +173,8 @@ class ImageViewVC: UIViewController {
         newsItem.Tittle = self.myString_name
         newsItem.Location = self.myString_Location
         newsItem.CropState = myCrop
+        newsItem.Vote = 0
+        newsItem.UploadDate = getTodayString()
         newsItem.UploaderID = UserDefaults.standard.string(forKey: MyUniqyeID) ?? "001"
   
         
@@ -252,7 +272,7 @@ class ImageViewVC: UIViewController {
         let valueUpdate: AWSDynamoDBAttributeValueUpdate = AWSDynamoDBAttributeValueUpdate()
         valueUpdate.value = updatedValue
         valueUpdate.action = AWSDynamoDBAttributeAction.add
-        updateInput.attributeUpdates = ["count": valueUpdate]
+        updateInput.attributeUpdates = ["Vote": valueUpdate]
         updateInput.returnValues = AWSDynamoDBReturnValue.updatedNew
         dynamoDbObjectMapper.updateItem(updateInput).continueWith(executor: AWSExecutor.mainThread(), block: { (task:AWSTask!) -> AnyObject! in
             if (task.error == nil) {

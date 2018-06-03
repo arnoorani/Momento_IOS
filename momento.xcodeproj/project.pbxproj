@@ -40,6 +40,7 @@
 		737D10B6209F235500C65FAF /* reload.json in Resources */ = {isa = PBXBuildFile; fileRef = 737D10B5209F235500C65FAF /* reload.json */; };
 		73D75CA820B2409F000AB99E /* TableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D75CA720B2409F000AB99E /* TableVC.swift */; };
 		73D75CAA20B240CA000AB99E /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D75CA920B240CA000AB99E /* TableViewCell.swift */; };
+		73F869FF20BBA7F900EE2D12 /* myimglogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 73F869FE20BBA7F800EE2D12 /* myimglogo.png */; };
 		B9CBEE9DD38A5A64E5F83ED9 /* Pods_momento.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E8A5E4C6E46A793EC49D2F8 /* Pods_momento.framework */; };
 		FEFC9592E1381145D7E71ADE /* Pods_momentoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CE56037E40637CAE78B6F98 /* Pods_momentoTests.framework */; };
 /* End PBXBuildFile section */
@@ -102,6 +103,7 @@
 		737D10B5209F235500C65FAF /* reload.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = reload.json; sourceTree = "<group>"; };
 		73D75CA720B2409F000AB99E /* TableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableVC.swift; sourceTree = "<group>"; };
 		73D75CA920B240CA000AB99E /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		73F869FE20BBA7F800EE2D12 /* myimglogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = myimglogo.png; sourceTree = "<group>"; };
 		7DF596B7FDF6FDEF6E56EF60 /* Pods-momento.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-momento.release.xcconfig"; path = "Pods/Target Support Files/Pods-momento/Pods-momento.release.xcconfig"; sourceTree = "<group>"; };
 		8C861E3C489CDD2778C302BC /* Pods-momentoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-momentoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-momentoUITests/Pods-momentoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		8F97CC497C5A37E41AA7C18B /* Pods_momentoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_momentoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -165,6 +167,7 @@
 		737D105A209EBA8700C65FAF /* momento */ = {
 			isa = PBXGroup;
 			children = (
+				73F869FE20BBA7F800EE2D12 /* myimglogo.png */,
 				730424AC209F92D200B1A0F8 /* share_for_graminsta_app.json */,
 				737D10B5209F235500C65FAF /* reload.json */,
 				737D10B3209EC3D900C65FAF /* image_icon_tadah!.json */,
@@ -369,6 +372,7 @@
 				737D10A8209EC36900C65FAF /* Roboto-BlackItalic.ttf in Resources */,
 				737D10A9209EC36900C65FAF /* Roboto-Bold.ttf in Resources */,
 				737D10AA209EC36900C65FAF /* Roboto-BoldItalic.ttf in Resources */,
+				73F869FF20BBA7F900EE2D12 /* myimglogo.png in Resources */,
 				737D10AB209EC36900C65FAF /* Roboto-Italic.ttf in Resources */,
 				737D10AC209EC36900C65FAF /* Roboto-Light.ttf in Resources */,
 				737D10AD209EC36900C65FAF /* Roboto-LightItalic.ttf in Resources */,

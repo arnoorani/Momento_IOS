@@ -17,7 +17,8 @@ class AWSDataModel: AWSDynamoDBObjectModel, AWSDynamoDBModeling  {
    @objc var Note: String?
    @objc var Location: String?
     @objc var UploaderID: String?
-    
+    @objc var Vote:NSNumber?
+    @objc var UploadDate:String?
   
 
    @objc var CropState: String?

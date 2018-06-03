@@ -21,7 +21,7 @@ class MyPageVC: UIPageViewController,UIPageViewControllerDelegate,UIPageViewCont
         super.viewDidLoad()
         self.dataSource = self
         self.delegate   = self
-        print("Ready!!!")
+
        
             setViewControllers([pages[0]], direction: .forward, animated: true, completion: nil)
         

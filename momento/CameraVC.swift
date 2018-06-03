@@ -42,11 +42,21 @@ class CameraVC: UIViewController,UIImagePickerControllerDelegate,UINavigationCon
         
         
         if let accessToken = AccessToken.current {
-            print(accessToken.userId as Any)
+     self.view.isUserInteractionEnabled = true
         }else{
-            //self.present(controller, animated: true, completion: nil)
+            
+//                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//                    let controller = storyboard.instantiateViewController(withIdentifier: "IDELogin") as! LoginVC
+//   
+//             self.present(controller, animated: true, completion: nil)
+        
+            //        controller.modalTransitionStyle = .crossDissolve
+            //        present(controller, animated: true, completion: nil)
+            
+           
 
             self.performSegue(withIdentifier: "goToLogin", sender: self)
+            self.view.isUserInteractionEnabled = false
         }
         
       

@@ -24,8 +24,8 @@ class TableVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         myTableView.dataSource = self
         
         
-        
-        ScanData()
+     let myUniueID:String = UserDefaults.standard.string(forKey: MyUniqyeID) ?? "-"
+        queryData(with: myUniueID)
         
         
         // UpdateAWS_Number()
@@ -34,13 +34,54 @@ class TableVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         
         // Do any additional setup after loading the view.
     }
-    
-    func ScanData(){
+    func queryData(with myUniueID: String) {
+        // 1) Configure the query
+        let queryExpression = AWSDynamoDBQueryExpression()
+        queryExpression.indexName = "UploaderID-UploadDate-index"
+        
+        queryExpression.keyConditionExpression = "#UploaderID = :UploaderID AND #UploadDate >= :UploadDate"
+        //        queryExpression.expressionAttributeValues = [":val" : "10156328806913134", ":val1":  "0000-0-00 00:00:0"]
+        queryExpression.expressionAttributeNames = [
+            "#UploaderID": "UploaderID",
+            "#UploadDate": "UploadDate"
+        ]
+        queryExpression.expressionAttributeValues = [
+            ":UploaderID": myUniueID,
+            ":UploadDate": "0"
+        ]
         
         
-        let myUniueID:String = UserDefaults.standard.string(forKey: MyUniqyeID)!
-        print(myUniueID)
         
+        
+        
+        // 2) Make the query
+        
+        let dynamoDbObjectMapper = AWSDynamoDBObjectMapper.default()
+        
+        dynamoDbObjectMapper.query(AWSDataModel.self, expression: queryExpression) { (output: AWSDynamoDBPaginatedOutput?, error: Error?) in
+            if error != nil {
+                print("The request failed. Error: \(String(describing: error))")
+            }
+            if output != nil {
+                self.myItems = output
+                DispatchQueue.main.async {
+                    let test:Int = (self.myItems?.items.count)!
+                    if(test > 0){
+                        
+                        self.myTableView.reloadData()
+                    }else{
+                        print("EMPTY")
+                    }
+                    
+                }
+//                for news in output!.items {
+//                    let newsItem = news as? AWSDataModel
+//                    print("\(newsItem!.Tittle!)")
+//                }
+            }
+        }
+    }
+    func ScanData(with myUniueID: String){
         let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
         let scanExpression = AWSDynamoDBScanExpression()
         scanExpression.limit = 20
@@ -63,7 +104,7 @@ class TableVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
                
                 
                 DispatchQueue.main.async {
-                     var test:Int = (self.myItems?.items.count)!
+                    let test:Int = (self.myItems?.items.count)!
                     if(test > 0){
                        
                         self.myTableView.reloadData()
