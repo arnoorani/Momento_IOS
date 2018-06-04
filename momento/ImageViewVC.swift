@@ -35,7 +35,8 @@ class ImageViewVC: UIViewController {
         super.viewDidLoad()
     
         createAnimatedView_cross()
-        performScan()
+         let myUniueID:String = UserDefaults.standard.string(forKey: MyUniqyeID) ?? "-"
+        performScan(Use: myUniueID)
         
         self.completionHandler = { (task, error) -> Void in
             DispatchQueue.main.async(execute: {
@@ -75,11 +76,14 @@ class ImageViewVC: UIViewController {
     }
 
     
-    func performScan(){
+    func performScan(Use myUniqueID:String){
         self.createAnimatedView()
         let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
         let scanExpression = AWSDynamoDBScanExpression()
-        scanExpression.limit = 20
+       // scanExpression.limit = 20
+        scanExpression.filterExpression = "UploaderID <> :val"
+        scanExpression.expressionAttributeValues = [":val": "10156328806913134"]
+
         dynamoDBObjectMapper.scan(AWSDataModel.self, expression: scanExpression).continueWith(block: { (task:AWSTask<AWSDynamoDBPaginatedOutput>!) -> Any? in
             if let error = task.error as NSError? {
                 print("The request failed. Error: \(error)")
@@ -87,8 +91,9 @@ class ImageViewVC: UIViewController {
                 
                 let mybook:AWSDynamoDBPaginatedOutput = paginatedOutput
                 let myModel:AWSDataModel = mybook.items[Int(arc4random_uniform(UInt32(mybook.items.count)) + 0)] as! AWSDataModel
-                
+         
                 self.myString_ImageID = myModel.UniqueID!
+              
                 let url = URL(string: "https://s3.amazonaws.com/reliefapp/")?.appendingPathComponent(myModel.Tittle!)
                 
                 

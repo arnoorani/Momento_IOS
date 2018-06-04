@@ -9,13 +9,14 @@
 import UIKit
 import AWSDynamoDB
 import AWSCore
-
+import AWSS3
+import Lottie
 
 
 class TableVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     var myItems:AWSDynamoDBPaginatedOutput?
     
-    
+       private var myAnimatoinView: LOTAnimationView?
     @IBOutlet weak var myTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +26,9 @@ class TableVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         
         
      let myUniueID:String = UserDefaults.standard.string(forKey: MyUniqyeID) ?? "-"
+        createAnimatedView()
         queryData(with: myUniueID)
+       
         
         
         // UpdateAWS_Number()
@@ -34,11 +37,29 @@ class TableVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         
         // Do any additional setup after loading the view.
     }
+    func createAnimatedView(){
+        
+        if(myAnimatoinView?.isAnimationPlaying == true){
+            
+        }else{
+            myAnimatoinView = LOTAnimationView(name: "image_icon_tadah!")
+            myAnimatoinView!.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+            myAnimatoinView!.contentMode = .scaleAspectFill
+            myAnimatoinView!.frame = CGRect(x:0 ,y:0,width:100,height:100)
+            myAnimatoinView!.center = view.center
+            myAnimatoinView!.play()
+            myAnimatoinView!.loopAnimation = true
+            self.myTableView.addSubview(myAnimatoinView!)
+        }
+        
+        
+    }
     func queryData(with myUniueID: String) {
         // 1) Configure the query
+        
         let queryExpression = AWSDynamoDBQueryExpression()
         queryExpression.indexName = "UploaderID-UploadDate-index"
-        
+        queryExpression.scanIndexForward = false
         queryExpression.keyConditionExpression = "#UploaderID = :UploaderID AND #UploadDate >= :UploadDate"
         //        queryExpression.expressionAttributeValues = [":val" : "10156328806913134", ":val1":  "0000-0-00 00:00:0"]
         queryExpression.expressionAttributeNames = [
@@ -72,7 +93,7 @@ class TableVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
                     }else{
                         print("EMPTY")
                     }
-                    
+                   self.myAnimatoinView?.removeFromSuperview()
                 }
 //                for news in output!.items {
 //                    let newsItem = news as? AWSDataModel
@@ -115,11 +136,11 @@ class TableVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
                 }
                
                
-                for book in paginatedOutput.items as! [AWSDataModel] {
-                    // Do something with book.
-print("Running!")
-                    print(book.UniqueID  as Any)
-                }
+//                for book in paginatedOutput.items as! [AWSDataModel] {
+//                    // Do something with book.
+//print("Running!")
+//                
+//                }
                 
                 
             }
@@ -158,10 +179,14 @@ print("Running!")
                     print(myModelItems)
                     cell.myLableView.text = myModelItems.Location
                     cell.myTextView.text = myModelItems.Note
+                    cell.myLable_Count.text = myModelItems.Vote?.stringValue
                     
                     let url = URL(string: "https://s3.amazonaws.com/reliefapp/")?.appendingPathComponent(myModelItems.Tittle!)
                     let data = try? Data(contentsOf: url!)
-                    cell.myCellImageView.image = UIImage(data: data!)
+                   
+                   
+                    cell.myCellImageView.image =  self.resizeImage(image: UIImage(data: data!)!, targetSize: CGSize(width:355, height:190))
+                    cell.myCellImageView.clipsToBounds = true
                     
                 }
             
@@ -182,7 +207,31 @@ print("Running!")
         
         return cell //4.
     }
-    
+    func resizeImage(image: UIImage, targetSize: CGSize) -> UIImage {
+        let size = image.size
+        
+        let widthRatio  = targetSize.width  / size.width
+        let heightRatio = targetSize.height / size.height
+        
+        // Figure out what our orientation is, and use that to form the rectangle
+        var newSize: CGSize
+        if(widthRatio > heightRatio) {
+            newSize = CGSize(width:size.width * heightRatio, height:size.height * heightRatio)
+        } else {
+            newSize = CGSize(width:size.width * widthRatio,  height:size.height * widthRatio)
+        }
+        
+        // This is the rect that we've calculated out and this is what is actually used below
+        let rect = CGRect(x:0, y:0, width:newSize.width, height:newSize.height)
+        
+        // Actually do the resizing to the rect using the ImageContext stuff
+        UIGraphicsBeginImageContextWithOptions(newSize, false, UIScreen.main.scale)
+        image.draw(in: rect)
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return newImage!
+    }
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
